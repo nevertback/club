@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>游民星空Club</title>
+    <link href="http://j.gamersky.com/g/normalize.min.css" rel="stylesheet">
+    <link href="http://j.gamersky.com/user/club/wap/css/qz.wap.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="text/javascript">
+      /* 因为我们后面用的是rem布局，所以这里做下处理，根据不用设备分辨率更改跟字体大小。 */
+      (function(win,doc,baseSize){
+        change();
+        function change(){
+          let ww = screen.width;
+          ww>baseSize?ww=baseSize:ww;
+          doc.documentElement.style.fontSize = ww /baseSize*100+'px';
+        }
+        win.addEventListener('resize',change,false);
+        win.addEventListener('orientationchange',change,false);  /* 这个是移动端设备横屏、竖屏转换时触发的事件处理函数 */
+      })(window,document,640);
+    </script>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
