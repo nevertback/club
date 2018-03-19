@@ -6,6 +6,7 @@
           <h5><a>{{cdt.user}}</a></h5>
           <p><span class="time">{{cdt.createtime}}</span></p>
         </div>
+        <div class="spec-icons"><a v-if="cdt.spectop" class="spec-top">置顶</a><a v-if="cdt.specvalue" class="spec-value">精</a></div>
       </header>
       <section class="detail">
         <div class="content" v-html="cdt.text"></div>
@@ -55,6 +56,7 @@
       }
     },
     mounted(){
+      //console.log(this.cdt);
       if(this.cdt.picbig.url){
         this.picStyle.picbig = true;
         let tmpData = [];
